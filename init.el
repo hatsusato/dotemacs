@@ -1,4 +1,5 @@
 ;; init.elファイルを基準ディレクトリに設定する。
+;; emacs -q -l ~/path/to/somewhere/init.el
 (when load-file-name
   (setq user-emacs-directory (file-name-directory load-file-name)))
 
