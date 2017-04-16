@@ -19,3 +19,7 @@
 
 ;; インストールするパッケージのリスト
 (el-get-bundle use-package)
+
+;; use-packageがインストールされていないときのための空の設定
+(unless (require 'use-package nil t)
+  (defmacro use-package (&rest args)))
