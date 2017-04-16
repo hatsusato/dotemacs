@@ -8,7 +8,7 @@
         package-user-dir (expand-file-name "elpa" versioned-dir)))
 
 ;; el-getをインストールする。
-(add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))
+(add-to-list 'load-path (expand-file-name "el-get" el-get-dir))
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
