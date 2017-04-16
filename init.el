@@ -33,6 +33,14 @@
 (defun my-cancel-line()
   (interactive)
   (kill-line 0))
+;; next pane
+(defun my-next-window()
+  (interactive)
+  (other-window 1))
+;; prev pane
+(defun my-prev-window()
+  (interactive)
+  (other-window -1))
 
 ;; グローバルなキー設定。
 (use-package bind-key
@@ -40,4 +48,6 @@
   (bind-key* "C-h" 'backward-delete-char-untabify)
   (bind-key* "C-x C-b" 'bs-show)
   (bind-key "C-t" 'my-transpose-chars)
-  (bind-key "C-u" 'my-cancel-line))
+  (bind-key "C-u" 'my-cancel-line)
+  (bind-key* "C-x n" 'my-next-window)
+  (bind-key* "C-x p" 'my-prev-window))
