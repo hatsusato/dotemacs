@@ -29,10 +29,15 @@
   (interactive)
   (backward-char)
   (transpose-chars 1))
+;; C-u in terminal
+(defun my-cancel-line()
+  (interactive)
+  (kill-line 0))
 
 ;; グローバルなキー設定。
 (use-package bind-key
   :config
   (bind-key* "C-h" 'backward-delete-char-untabify)
   (bind-key* "C-x C-b" 'bs-show)
-  (bind-key "C-t" 'my-transpose-chars))
+  (bind-key "C-t" 'my-transpose-chars)
+  (bind-key "C-u" 'my-cancel-line))
