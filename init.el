@@ -23,3 +23,9 @@
 ;; use-packageがインストールされていないときのための空の設定
 (unless (require 'use-package nil t)
   (defmacro use-package (&rest args)))
+
+;; グローバルなキー設定。
+(use-package bind-key
+  :config
+  (bind-key* "C-h" 'backward-delete-char-untabify)
+  (bind-key* "C-x C-b" 'bs-show))
