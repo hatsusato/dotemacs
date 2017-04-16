@@ -29,15 +29,15 @@
   (interactive)
   (backward-char)
   (transpose-chars 1))
-;; C-u in terminal
+;; C-u as in terminal
 (defun my-cancel-line()
   (interactive)
   (kill-line 0))
-;; next pane
+;; Next pane
 (defun my-next-window()
   (interactive)
   (other-window 1))
-;; prev pane
+;; Prev pane
 (defun my-prev-window()
   (interactive)
   (other-window -1))
