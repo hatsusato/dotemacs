@@ -24,8 +24,15 @@
 (unless (require 'use-package nil t)
   (defmacro use-package (&rest args)))
 
+;; C-b C-t
+(defun my-transpose-chars()
+  (interactive)
+  (backward-char)
+  (transpose-chars 1))
+
 ;; グローバルなキー設定。
 (use-package bind-key
   :config
   (bind-key* "C-h" 'backward-delete-char-untabify)
-  (bind-key* "C-x C-b" 'bs-show))
+  (bind-key* "C-x C-b" 'bs-show)
+  (bind-key "C-t" 'my-transpose-chars))
