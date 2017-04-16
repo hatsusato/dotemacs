@@ -52,3 +52,25 @@
   (bind-key* "C-x n" 'my-next-window)
   (bind-key* "C-x p" 'my-prev-window)
   (bind-key "C-\\" nil))
+
+;; Disable start page
+(setq inhibit-startup-message t)
+;; yes/no -> y/n
+(defalias 'yes-or-no-p 'y-or-n-p)
+;; Costomizable initial scratch message
+(setq initial-scratch-message
+      (concat initial-scratch-message ""))
+;; Enable to delete region
+(delete-selection-mode 1)
+;; Enable minibuffer completion
+(icomplete-mode 1)
+;; Show trailing space
+(setq-default show-trailing-whitespace t)
+;; Use space as indent
+(setq-default indent-tabs-mode nil)
+;; Show line number
+(global-linum-mode 1)
+;; Show (row,column) number
+(column-number-mode 1)
+;; Highlight parens
+(show-paren-mode 1)
