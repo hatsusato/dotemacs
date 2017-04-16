@@ -50,4 +50,5 @@
   (bind-key "C-t" 'my-transpose-chars)
   (bind-key "C-u" 'my-cancel-line)
   (bind-key* "C-x n" 'my-next-window)
-  (bind-key* "C-x p" 'my-prev-window))
+  (bind-key* "C-x p" 'my-prev-window)
+  (bind-key "C-\\" nil))
