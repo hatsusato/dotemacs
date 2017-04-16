@@ -18,7 +18,26 @@
     (eval-print-last-sexp)))
 
 ;; Package list to be installed by el-get
-(el-get-bundle use-package)
+(el-get-bundle elpa:ace-jump-mode)
+(el-get-bundle elpa:auto-complete)
+(el-get-bundle elpa:bind-key)
+(el-get-bundle elpa:flycheck)
+(el-get-bundle elpa:gitconfig-mode)
+(el-get-bundle elpa:gitignore-mode)
+(el-get-bundle elpa:git-commit)
+(el-get-bundle elpa:helm)
+(el-get-bundle elpa:hlinum)
+(el-get-bundle elpa:magit)
+(el-get-bundle elpa:markdown-mode)
+(el-get-bundle elpa:multiple-cursors)
+(el-get-bundle elpa:rainbow-delimiters)
+(el-get-bundle elpa:smartparens)
+(el-get-bundle elpa:smooth-scroll)
+(el-get-bundle elpa:undohist)
+(el-get-bundle elpa:undo-tree)
+(el-get-bundle elpa:use-package)
+(el-get-bundle elpa:volatile-highlights)
+(el-get-bundle elpa:zenburn-theme)
 
 ;; Set use-package to empty command unless use-package is installed
 (unless (require 'use-package nil t)
