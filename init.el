@@ -72,6 +72,11 @@
   (bind-key* "C-x p" 'my-prev-window)
   (bind-key "C-\\" nil))
 
+;; Initialize package
+(use-package package
+  :config
+  (package-initialize))
+
 ;; Disable start page
 (setq inhibit-startup-message t)
 ;; yes/no -> y/n
