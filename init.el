@@ -24,7 +24,7 @@
 (unless (require 'use-package nil t)
   (defmacro use-package (&rest args)))
 
-;; Package list to be installed by el-get
+;; Package list from github to be installed by el-get
 (el-get-bundle winterTTr/ace-jump-mode)
 (el-get-bundle auto-complete/auto-complete)
 (el-get-bundle flycheck/flycheck)
@@ -32,15 +32,22 @@
 (el-get-bundle emacs-helm/helm)
 (el-get-bundle tom-tan/hlinum-mode)
 (el-get-bundle magit/magit)
-(el-get-bundle elpa:markdown-mode)
 (el-get-bundle magnars/multiple-cursors.el)
 (el-get-bundle Fanael/rainbow-delimiters)
 (el-get-bundle Fuco1/smartparens)
+(el-get-bundle k-talo/volatile-highlights.el)
+(el-get-bundle bbatsov/zenburn-emacs)
+
+;; Initialize package
+(use-package package
+  :config
+  (package-initialize))
+
+;; Package list from elpa to be installed by el-get
+(el-get-bundle elpa:markdown-mode)
 (el-get-bundle elpa:smooth-scroll)
 (el-get-bundle elpa:undohist)
 (el-get-bundle elpa:undo-tree)
-(el-get-bundle k-talo/volatile-highlights.el)
-(el-get-bundle bbatsov/zenburn-emacs)
 
 ;; C-b C-t
 (defun my-transpose-chars()
@@ -70,11 +77,6 @@
   (bind-key* "C-x n" 'my-next-window)
   (bind-key* "C-x p" 'my-prev-window)
   (bind-key "C-\\" nil))
-
-;; Initialize package
-(use-package package
-  :config
-  (package-initialize))
 
 ;; Disable start page
 (setq inhibit-startup-message t)
