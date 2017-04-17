@@ -40,6 +40,8 @@
 
 ;; Initialize package
 (use-package package
+  :init
+  (setq gnutls-verify-error t)
   :config
   (package-initialize))
 
