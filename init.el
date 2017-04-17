@@ -17,6 +17,13 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
+;; Install use-package
+(el-get-bundle jwiegley/use-package)
+
+;; Set use-package to empty command unless use-package is installed
+(unless (require 'use-package nil t)
+  (defmacro use-package (&rest args)))
+
 ;; Package list to be installed by el-get
 (el-get-bundle winterTTr/ace-jump-mode)
 (el-get-bundle auto-complete/auto-complete)
@@ -30,15 +37,10 @@
 (el-get-bundle Fanael/rainbow-delimiters)
 (el-get-bundle Fuco1/smartparens)
 (el-get-bundle elpa:smooth-scroll)
-(el-get-bundle jwiegley/use-package)
 (el-get-bundle elpa:undohist)
 (el-get-bundle elpa:undo-tree)
 (el-get-bundle k-talo/volatile-highlights.el)
 (el-get-bundle bbatsov/zenburn-emacs)
-
-;; Set use-package to empty command unless use-package is installed
-(unless (require 'use-package nil t)
-  (defmacro use-package (&rest args)))
 
 ;; C-b C-t
 (defun my-transpose-chars()
