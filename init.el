@@ -29,7 +29,9 @@
 (el-get-bundle auto-complete/auto-complete)
 (el-get-bundle flycheck/flycheck)
 (el-get-bundle magit/git-modes)
-(el-get-bundle emacs-helm/helm)
+(el-get-bundle emacs-helm/helm
+  :autoloads "helm-autoloads"
+  :build (("make")))
 (el-get-bundle tom-tan/hlinum-mode)
 (el-get-bundle magit/magit)
 (el-get-bundle magnars/multiple-cursors.el)
