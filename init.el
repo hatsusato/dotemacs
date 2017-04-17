@@ -53,33 +53,16 @@
 (el-get-bundle elpa:undohist)
 (el-get-bundle elpa:undo-tree)
 
-;; C-b C-t
-(defun my-transpose-chars()
-  (interactive)
-  (backward-char)
-  (transpose-chars 1))
-;; C-u as in terminal
-(defun my-cancel-line()
-  (interactive)
-  (kill-line 0))
-;; Next pane
-(defun my-next-window()
-  (interactive)
-  (other-window 1))
-;; Prev pane
-(defun my-prev-window()
-  (interactive)
-  (other-window -1))
-
 ;; Global key bindings
 (use-package bind-key
   :config
   (bind-key* "C-h" 'backward-delete-char-untabify)
   (bind-key* "C-x C-b" 'bs-show)
-  (bind-key "C-t" 'my-transpose-chars)
-  (bind-key "C-u" 'my-cancel-line)
-  (bind-key* "C-x n" 'my-next-window)
-  (bind-key* "C-x p" 'my-prev-window)
+  (bind-key "C-t" (lambda () (interactive)
+                    (backward-char) (transpose-chars 1)))
+  (bind-key "C-u" (lambda () (interactive) (kill-line 0)))
+  (bind-key* "C-x n" (lambda () (interactive) (other-window 1)))
+  (bind-key* "C-x p" (lambda () (interactive) (other-window -1)))
   (bind-key "C-\\" nil))
 
 ;; Disable start page
