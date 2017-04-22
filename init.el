@@ -35,6 +35,7 @@
 (el-get-bundle tom-tan/hlinum-mode)
 (el-get-bundle magit/magit)
 (el-get-bundle magnars/multiple-cursors.el)
+(el-get-bundle ProofGeneral/PG)
 (el-get-bundle Fanael/rainbow-delimiters)
 (el-get-bundle Fuco1/smartparens)
 (el-get-bundle k-talo/volatile-highlights.el)
@@ -88,3 +89,12 @@
 (show-paren-mode 1)
 ;; Suppress question about following symlinks to version controlled files
 (setq vc-follow-symlinks t)
+
+;; Initialize ProofGeneral
+;; (async-shell-command (concat "make -C " (expand-file-name "PG" el-get-dir)))
+(use-package proof-site
+  :init
+  (load (expand-file-name "PG/generic/proof-site" el-get-dir))
+  :config
+  (setq proof-electric-terminator-enable t)
+  (setq proof-three-window-mode-policy 'hybrid))
