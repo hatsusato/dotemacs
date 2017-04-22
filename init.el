@@ -86,3 +86,5 @@
 (column-number-mode 1)
 ;; Highlight parens
 (show-paren-mode 1)
+;; Suppress question about following symlinks to version controlled files
+(setq vc-follow-symlinks t)
