@@ -94,6 +94,8 @@
   :init
   (load (expand-file-name "PG/generic/proof-site" el-get-dir))
   :config
+  (setq coq-compile-before-require t)
+  (setq coq-compile-parallel-in-background t)
   (setq proof-electric-terminator-enable t)
   (setq proof-three-window-mode-policy 'hybrid))
 
