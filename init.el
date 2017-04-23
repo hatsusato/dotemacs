@@ -81,8 +81,6 @@
 (setq-default show-trailing-whitespace t)
 ;; Use space as indent
 (setq-default indent-tabs-mode nil)
-;; Show line number
-(global-linum-mode 1)
 ;; Show (row,column) number
 (column-number-mode 1)
 ;; Highlight parens
