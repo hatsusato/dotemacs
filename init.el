@@ -88,6 +88,11 @@
 ;; Suppress question about following symlinks to version controlled files
 (setq vc-follow-symlinks t)
 
+;; Configure undo-tree
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
+
 ;; Initialize ProofGeneral
 ;; (async-shell-command (concat "make -C " (expand-file-name "PG" el-get-dir)))
 (use-package proof-site
