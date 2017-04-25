@@ -104,6 +104,15 @@
   (setq proof-electric-terminator-enable t)
   (setq proof-three-window-mode-policy 'hybrid))
 
+;; Configure face attributes of diff-mode
+(use-package diff-mode
+  :config
+  (custom-set-faces
+   '(diff-added ((t . (:inherit diff-changed :background "brightgreen"))))
+   '(diff-context ((t . (:foreground "brightblack"))))
+   '(diff-header ((t . (:inherit diff-context :background "white"))))
+   '(diff-removed ((t . (:inherit diff-changed :background "brightred"))))))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
