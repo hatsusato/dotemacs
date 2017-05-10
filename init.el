@@ -75,7 +75,8 @@
 (use-package cycle-themes
   :init
   (setq cycle-themes-theme-list
-        (cons 'default (remove 'default (custom-available-themes))))
+        '(default deeper-blue manoj-dark misterioso
+           tango-dark tsdh-dark wheatgrass wombat zenburn))
   (setq custom-known-themes (append '(user changed) cycle-themes-theme-list))
   (add-hook 'cycle-themes-after-cycle-hook
             (lambda () (interactive)
