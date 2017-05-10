@@ -90,7 +90,6 @@
   :config
   (custom-set-faces
    '(diff-added ((t . (:inherit diff-changed :background "brightgreen"))))
-   '(diff-context ((t . (:foreground "brightblack"))))
    '(diff-header ((t . (:inherit diff-context :background "white"))))
    '(diff-removed ((t . (:inherit diff-changed :background "brightred"))))))
 
