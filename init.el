@@ -95,5 +95,6 @@
    '(diff-header ((t . (:inherit diff-context :background "white"))))
    '(diff-removed ((t . (:inherit diff-changed :background "brightred"))))))
 
+;; Load separate custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
