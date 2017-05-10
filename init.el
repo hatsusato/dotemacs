@@ -76,7 +76,9 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; Costomizable initial scratch message
 (setq initial-scratch-message
-      (concat initial-scratch-message ""))
+      (concat initial-scratch-message
+              ";; (setq make-backup-files nil)\n"
+              ";; /sudo::/path-to-file\n"))
 ;; Enable to delete region
 (delete-selection-mode 1)
 ;; Enable minibuffer completion
