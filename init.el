@@ -70,10 +70,14 @@
   (bind-key "S-C-<up>" 'enlarge-window)
   (bind-key "C-\\" nil))
 
-;; Configure undo-tree
-(use-package undo-tree
+;; Configure face attributes of diff-mode
+(use-package diff-mode
   :config
-  (global-undo-tree-mode))
+  (custom-set-faces
+   '(diff-added ((t . (:inherit diff-changed :background "brightgreen"))))
+   '(diff-context ((t . (:foreground "brightblack"))))
+   '(diff-header ((t . (:inherit diff-context :background "white"))))
+   '(diff-removed ((t . (:inherit diff-changed :background "brightred"))))))
 
 ;; Initialize ProofGeneral
 ;; (async-shell-command (concat "make -C " (expand-file-name "PG" el-get-dir)))
@@ -86,14 +90,10 @@
   (setq proof-electric-terminator-enable t)
   (setq proof-three-window-mode-policy 'hybrid))
 
-;; Configure face attributes of diff-mode
-(use-package diff-mode
+;; Configure undo-tree
+(use-package undo-tree
   :config
-  (custom-set-faces
-   '(diff-added ((t . (:inherit diff-changed :background "brightgreen"))))
-   '(diff-context ((t . (:foreground "brightblack"))))
-   '(diff-header ((t . (:inherit diff-context :background "white"))))
-   '(diff-removed ((t . (:inherit diff-changed :background "brightred"))))))
+  (global-undo-tree-mode))
 
 ;; Load separate custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
