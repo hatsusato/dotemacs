@@ -64,6 +64,10 @@
   (bind-key "C-u" (lambda () (interactive) (kill-line 0)))
   (bind-key* "C-x n" (lambda () (interactive) (other-window 1)))
   (bind-key* "C-x p" (lambda () (interactive) (other-window -1)))
+  (bind-key "S-C-<left>" 'shrink-window-horizontally)
+  (bind-key "S-C-<right>" 'enlarge-window-horizontally)
+  (bind-key "S-C-<down>" 'shrink-window)
+  (bind-key "S-C-<up>" 'enlarge-window)
   (bind-key "C-\\" nil))
 
 ;; Disable start page
