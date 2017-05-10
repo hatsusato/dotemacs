@@ -27,6 +27,7 @@
 ;; Package list from github to be installed by el-get
 (el-get-bundle winterTTr/ace-jump-mode)
 (el-get-bundle auto-complete/auto-complete)
+(el-get-bundle toroidal-code/cycle-themes.el)
 (el-get-bundle flycheck/flycheck)
 (el-get-bundle magit/git-modes)
 (el-get-bundle emacs-helm/helm
@@ -69,6 +70,20 @@
   (bind-key "S-C-<down>" 'shrink-window)
   (bind-key "S-C-<up>" 'enlarge-window)
   (bind-key "C-\\" nil))
+
+;; Configure cycle themes
+(use-package cycle-themes
+  :init
+  (setq cycle-themes-theme-list
+        (cons 'default (remove 'default (custom-available-themes))))
+  (setq custom-known-themes (append '(user changed) cycle-themes-theme-list))
+  (add-hook 'cycle-themes-after-cycle-hook
+            (lambda () (interactive)
+              (message "Themes = %S" custom-enabled-themes)))
+  :config
+  (cycle-themes-mode)
+  (custom-set-faces
+   '(default ((t :background "unspecified-bg")))))
 
 ;; Configure face attributes of diff-mode
 (use-package diff-mode
