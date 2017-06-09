@@ -39,7 +39,6 @@
 (el-get-bundle ProofGeneral/PG)
 (el-get-bundle Fanael/rainbow-delimiters)
 (el-get-bundle Fuco1/smartparens)
-(el-get-bundle k-talo/volatile-highlights.el)
 (el-get-bundle bbatsov/zenburn-emacs)
 
 ;; package
