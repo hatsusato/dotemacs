@@ -155,6 +155,14 @@
   (smooth-scroll-mode t)
   )
 
+;; undohist
+(use-package undohist
+  :config
+  (setq undohist-ignored-files
+        '(".*/\\.git/.*"))
+  (undohist-initialize)
+  )
+
 ;; undo tree
 (use-package undo-tree
   :config
