@@ -91,6 +91,12 @@
   ("M-g" . ace-jump-line-mode)
   )
 
+;; auto complete
+(use-package auto-complete
+  :config
+  (ac-config-default)
+  )
+
 ;; cycle themes
 (defun my-print-current-theme()
   (interactive) (message "Themes = %S" custom-enabled-themes))
