@@ -91,14 +91,6 @@
   (custom-set-faces
    '(default ((t :background "unspecified-bg")))))
 
-;; Configure face attributes of diff-mode
-(use-package diff-mode
-  :config
-  (custom-set-faces
-   '(diff-added ((t . (:inherit diff-changed :background "brightgreen"))))
-   '(diff-header ((t . (:inherit diff-context :background "white"))))
-   '(diff-removed ((t . (:inherit diff-changed :background "brightred"))))))
-
 ;; Initialize ProofGeneral
 ;; (async-shell-command (concat "make -C " (expand-file-name "PG" el-get-dir)))
 (use-package proof-site
