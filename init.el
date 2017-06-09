@@ -72,6 +72,7 @@
   (bind-key* "C-S-<left>" 'shrink-window-horizontally)
   (bind-key* "C-S-<right>" 'enlarge-window-horizontally)
   (bind-key* "C-S-<up>" 'shrink-window)
+  (bind-key* "M-h" 'help-for-help)      ; from mark-paragraph
   (bind-key* "M-t" 'my-transpose-word)  ; from transpose-words
   (bind-key* "M-`" 'menu-bar-open)      ; from tmm-menubar
   (bind-key* "C-\\" nil))               ; from toggle-input-method
