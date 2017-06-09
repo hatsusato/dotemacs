@@ -74,9 +74,8 @@
 ;; Configure cycle themes
 (use-package cycle-themes
   :init
-  (setq cycle-themes-theme-list
-        '(default deeper-blue manoj-dark misterioso
-           tango-dark tsdh-dark wheatgrass wombat zenburn))
+  (setq cycle-themes-theme-list '(zenburn manoj-dark misterioso tango-dark
+                                          tsdh-dark wheatgrass wombat default))
   (setq custom-known-themes (append '(user changed) cycle-themes-theme-list))
   (add-hook 'cycle-themes-after-cycle-hook
             (lambda () (interactive)

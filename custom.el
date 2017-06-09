@@ -29,7 +29,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("4feaff1b8ff9c5fd8aa54114f3ad5893f1e84ab4dbfea48911653b4f2f3e50fa" default)))
+    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
  '(package-selected-packages
    (quote
     (zenburn-theme volatile-highlights undohist undo-tree smooth-scroll smartparens rainbow-delimiters multiple-cursors markdown-mode magit hlinum helm gitignore-mode gitconfig-mode flycheck bind-key auto-complete ace-jump-mode))))
