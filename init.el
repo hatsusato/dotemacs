@@ -80,17 +80,16 @@
   )
 
 ;; cycle themes
+(defun my-print-current-theme()
+  (interactive) (message "Themes = %S" custom-enabled-themes))
 (use-package cycle-themes
   :init
   (setq cycle-themes-theme-list '(zenburn manoj-dark tsdh-dark default))
   (setq custom-known-themes (append '(user changed) cycle-themes-theme-list))
-  (add-hook 'cycle-themes-after-cycle-hook
-            (lambda () (interactive)
-              (message "Themes = %S" custom-enabled-themes)))
+  (add-hook 'cycle-themes-after-cycle-hook 'my-print-current-theme)
   :config
   (cycle-themes-mode)
-  (custom-set-faces
-   '(default ((t :background "unspecified-bg"))))
+  (custom-set-faces '(default ((t :background "unspecified-bg"))))
   )
 
 ;; proof general
