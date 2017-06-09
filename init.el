@@ -59,17 +59,17 @@
 (use-package bind-key
   :config
   (bind-key* "C-h" 'backward-delete-char-untabify)
-  (bind-key* "C-x C-b" 'bs-show)
   (bind-key "C-t" (lambda () (interactive)
                     (backward-char) (transpose-chars 1)))
   (bind-key "C-u" (lambda () (interactive) (kill-line 0)))
   (bind-key* "C-x n" (lambda () (interactive) (other-window 1)))
   (bind-key* "C-x p" (lambda () (interactive) (other-window -1)))
+  (bind-key* "C-x C-b" 'bs-show)
+  (bind-key "C-S-<down>" 'enlarge-window)
+  (bind-key "C-S-<left>" 'shrink-window-horizontally)
+  (bind-key "C-S-<right>" 'enlarge-window-horizontally)
+  (bind-key "C-S-<up>" 'shrink-window)
   (bind-key* "M-`" 'menu-bar-open)
-  (bind-key "S-C-<left>" 'shrink-window-horizontally)
-  (bind-key "S-C-<right>" 'enlarge-window-horizontally)
-  (bind-key "S-C-<up>" 'shrink-window)
-  (bind-key "S-C-<down>" 'enlarge-window)
   (bind-key "C-\\" nil))
 
 ;; Configure cycle themes
