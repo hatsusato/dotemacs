@@ -141,6 +141,14 @@
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   )
 
+;; smartparens
+(use-package smartparens-config
+  :init
+  (add-hook 'prog-mode-hook #'smartparens-mode)
+  :config
+  (sp-pair "$" "$")
+  )
+
 ;; undo tree
 (use-package undo-tree
   :config
