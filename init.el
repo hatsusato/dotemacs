@@ -89,7 +89,6 @@
   (add-hook 'cycle-themes-after-cycle-hook 'my-print-current-theme)
   :config
   (cycle-themes-mode)
-  (custom-set-faces '(default ((t :background "unspecified-bg"))))
   )
 
 ;; proof general

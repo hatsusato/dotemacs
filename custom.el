@@ -34,13 +34,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default)))
- '(package-selected-packages
-   (quote
-    (zenburn-theme volatile-highlights undohist undo-tree smooth-scroll smartparens rainbow-delimiters multiple-cursors markdown-mode magit hlinum helm gitignore-mode gitconfig-mode flycheck bind-key auto-complete ace-jump-mode))))
+    ("f5512c02e0a6887e987a816918b7a684d558716262ac7ee2dd0437ab913eaec6" default))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t :background "unspecified-bg"))))
