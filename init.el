@@ -135,6 +135,12 @@
   (setq proof-three-window-mode-policy 'hybrid)
   )
 
+;; rainbow delimiters
+(use-package reinbow-delimiters
+  :init
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  )
+
 ;; undo tree
 (use-package undo-tree
   :config
