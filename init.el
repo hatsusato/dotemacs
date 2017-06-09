@@ -42,12 +42,13 @@
 (el-get-bundle k-talo/volatile-highlights.el)
 (el-get-bundle bbatsov/zenburn-emacs)
 
-;; Initialize package
+;; package
 (use-package package
   :init
   (setq gnutls-verify-error t)
   :config
-  (package-initialize))
+  (package-initialize)
+  )
 
 ;; Package list from elpa to be installed by el-get
 (el-get-bundle elpa:markdown-mode)
@@ -75,9 +76,10 @@
   (bind-key* "M-h" 'help-for-help)      ; from mark-paragraph
   (bind-key* "M-t" 'my-transpose-word)  ; from transpose-words
   (bind-key* "M-`" 'menu-bar-open)      ; from tmm-menubar
-  (bind-key* "C-\\" nil))               ; from toggle-input-method
+  (bind-key* "C-\\" nil)                ; from toggle-input-method
+  )
 
-;; Configure cycle themes
+;; cycle themes
 (use-package cycle-themes
   :init
   (setq cycle-themes-theme-list '(zenburn manoj-dark tsdh-dark default))
@@ -88,9 +90,10 @@
   :config
   (cycle-themes-mode)
   (custom-set-faces
-   '(default ((t :background "unspecified-bg")))))
+   '(default ((t :background "unspecified-bg"))))
+  )
 
-;; Initialize ProofGeneral
+;; proof general
 ;; (async-shell-command (concat "make -C " (expand-file-name "PG" el-get-dir)))
 (use-package proof-site
   :init
@@ -99,12 +102,14 @@
   (setq coq-compile-before-require t)
   (setq coq-compile-parallel-in-background t)
   (setq proof-electric-terminator-enable t)
-  (setq proof-three-window-mode-policy 'hybrid))
+  (setq proof-three-window-mode-policy 'hybrid)
+  )
 
-;; Configure undo-tree
+;; undo tree
 (use-package undo-tree
   :config
-  (global-undo-tree-mode))
+  (global-undo-tree-mode)
+  )
 
 ;; Load separate custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
