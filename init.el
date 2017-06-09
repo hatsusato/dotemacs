@@ -117,6 +117,12 @@
 (use-package helm
   )
 
+;; hlinum
+(use-package hlinum
+  :init
+  (add-hook 'linum-mode-hook 'hlinum-activate)
+  )
+
 ;; proof general
 ;; (async-shell-command (concat "make -C " (expand-file-name "PG" el-get-dir)))
 (use-package proof-site
