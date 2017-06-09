@@ -68,8 +68,8 @@
   (bind-key* "M-`" 'menu-bar-open)
   (bind-key "S-C-<left>" 'shrink-window-horizontally)
   (bind-key "S-C-<right>" 'enlarge-window-horizontally)
-  (bind-key "S-C-<down>" 'shrink-window)
-  (bind-key "S-C-<up>" 'enlarge-window)
+  (bind-key "S-C-<up>" 'shrink-window)
+  (bind-key "S-C-<down>" 'enlarge-window)
   (bind-key "C-\\" nil))
 
 ;; Configure cycle themes
