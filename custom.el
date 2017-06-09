@@ -1,26 +1,26 @@
+;; Show (row,column) number
+(column-number-mode 1)
+;; Enable to delete region
+(delete-selection-mode 1)
+;; Enable minibuffer completion
+(icomplete-mode 1)
+;; Use space as indent
+(setq-default indent-tabs-mode nil)
 ;; Disable start page
 (setq inhibit-startup-message t)
-;; yes/no -> y/n
-(defalias 'yes-or-no-p 'y-or-n-p)
 ;; Costomizable initial scratch message
 (setq initial-scratch-message
       (concat initial-scratch-message
 	      ";; (setq make-backup-files nil)\n"
 	      ";; /sudo::/path-to-file\n"))
-;; Enable to delete region
-(delete-selection-mode 1)
-;; Enable minibuffer completion
-(icomplete-mode 1)
-;; Show trailing space
-(setq-default show-trailing-whitespace t)
-;; Use space as indent
-(setq-default indent-tabs-mode nil)
-;; Show (row,column) number
-(column-number-mode 1)
 ;; Highlight parens
 (show-paren-mode 1)
+;; Show trailing space
+(setq-default show-trailing-whitespace t)
 ;; Suppress question about following symlinks to version controlled files
 (setq vc-follow-symlinks t)
+;; yes/no -> y/n
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
