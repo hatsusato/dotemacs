@@ -79,6 +79,18 @@
   (bind-key* "C-\\" nil)                ; from toggle-input-method
   )
 
+;; ace jump mode
+(use-package ace-jump-mode
+  :config
+  (setq ace-jump-mode-move-keys
+        (append "jfhgkdls;a:urytieowpq@mvnb,c.x/z-^[]\\1234567890" nil))
+  (setq ace-jump-word-mode-use-query-char nil)
+  :bind
+  ("M-:" . ace-jump-char-mode)
+  ("M-@" . ace-jump-word-mode)
+  ("M-g" . ace-jump-line-mode)
+  )
+
 ;; cycle themes
 (defun my-print-current-theme()
   (interactive) (message "Themes = %S" custom-enabled-themes))
