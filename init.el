@@ -57,6 +57,7 @@
 
 ;; Global key bindings
 (defun my-transpose-char() (interactive) (backward-char) (transpose-chars 1))
+(defun my-transpose-word() (interactive) (backward-word) (transpose-words 1))
 (defun my-next-window() (interactive) (other-window 1))
 (defun my-prev-window() (interactive) (other-window -1))
 (use-package bind-key
@@ -71,6 +72,7 @@
   (bind-key* "C-S-<left>" 'shrink-window-horizontally)
   (bind-key* "C-S-<right>" 'enlarge-window-horizontally)
   (bind-key* "C-S-<up>" 'shrink-window)
+  (bind-key* "M-t" 'my-transpose-word)  ; from transpose-words
   (bind-key* "M-`" 'menu-bar-open)      ; from tmm-menubar
   (bind-key* "C-\\" nil))               ; from toggle-input-method
 
