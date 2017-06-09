@@ -61,18 +61,18 @@
 (defun my-prev-window() (interactive) (other-window -1))
 (use-package bind-key
   :config
-  (bind-key* "C-h" 'backward-delete-char-untabify)
-  (bind-key* "C-t" 'my-transpose-char)
-  (bind-key* "C-u" 'backward-kill-sentence)
+  (bind-key* "C-h" 'backward-delete-char-untabify) ; from help-command
+  (bind-key* "C-t" 'my-transpose-char)             ; from transpose-chars
+  (bind-key* "C-u" 'backward-kill-sentence)        ; from universal-argument
   (bind-key* "C-x n" 'my-next-window)
   (bind-key* "C-x p" 'my-prev-window)
-  (bind-key* "C-x C-b" 'bs-show)
+  (bind-key* "C-x C-b" 'bs-show)        ; from list-buffers
   (bind-key* "C-S-<down>" 'enlarge-window)
   (bind-key* "C-S-<left>" 'shrink-window-horizontally)
   (bind-key* "C-S-<right>" 'enlarge-window-horizontally)
   (bind-key* "C-S-<up>" 'shrink-window)
-  (bind-key* "M-`" 'menu-bar-open)
-  (bind-key* "C-\\" nil))
+  (bind-key* "M-`" 'menu-bar-open)      ; from tmm-menubar
+  (bind-key* "C-\\" nil))               ; from toggle-input-method
 
 ;; Configure cycle themes
 (use-package cycle-themes
