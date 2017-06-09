@@ -109,6 +109,10 @@
   (cycle-themes-mode)
   )
 
+;; flycheck
+(use-package flycheck
+  )
+
 ;; proof general
 ;; (async-shell-command (concat "make -C " (expand-file-name "PG" el-get-dir)))
 (use-package proof-site
