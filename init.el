@@ -65,6 +65,7 @@
   (bind-key "C-u" (lambda () (interactive) (kill-line 0)))
   (bind-key* "C-x n" (lambda () (interactive) (other-window 1)))
   (bind-key* "C-x p" (lambda () (interactive) (other-window -1)))
+  (bind-key* "M-`" 'menu-bar-open)
   (bind-key "S-C-<left>" 'shrink-window-horizontally)
   (bind-key "S-C-<right>" 'enlarge-window-horizontally)
   (bind-key "S-C-<down>" 'shrink-window)
