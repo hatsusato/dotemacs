@@ -1,3 +1,9 @@
+;; Create backup files in ~/.emacs.d/backup
+(let ((my-backup-dir (concat user-emacs-directory "backup/")))
+  (add-to-list 'auto-save-file-name-transforms
+               (list ".*" my-backup-dir t) t)
+  (add-to-list 'backup-directory-alist
+               (cons "." my-backup-dir) t))
 ;; Show (row,column) number
 (column-number-mode 1)
 ;; Enable to delete region
@@ -11,7 +17,6 @@
 ;; Costomizable initial scratch message
 (setq initial-scratch-message
       (concat initial-scratch-message
-	      ";; (setq make-backup-files nil)\n"
 	      ";; /sudo::/path-to-file\n"))
 ;; Highlight parens
 (show-paren-mode 1)
