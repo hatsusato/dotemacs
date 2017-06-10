@@ -32,6 +32,7 @@
 (el-get-bundle magit/git-modes)
 (el-get-bundle tom-tan/hlinum-mode)
 (el-get-bundle DarwinAwardWinner/ido-ubiquitous)
+(el-get-bundle creichert/ido-vertical-mode.el)
 (el-get-bundle magit/magit)
 (el-get-bundle magnars/multiple-cursors.el)
 (el-get-bundle ProofGeneral/PG)
@@ -123,6 +124,11 @@
   (ido-everywhere 1)
   (setq ido-enable-flex-matching t)
   (ido-ubiquitous-mode 1)
+  )
+
+(use-package ido-vertical-mode
+  :config
+  (ido-vertical-mode 1)
   )
 
 ;; proof general
