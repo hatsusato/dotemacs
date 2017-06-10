@@ -38,6 +38,7 @@
 (el-get-bundle ProofGeneral/PG)
 (el-get-bundle Fanael/rainbow-delimiters)
 (el-get-bundle Fuco1/smartparens)
+(el-get-bundle nonsequitur/smex)
 (el-get-bundle bbatsov/zenburn-emacs)
 
 ;; package
@@ -147,6 +148,15 @@
 (use-package reinbow-delimiters
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+  )
+
+;; smex
+(use-package smex
+  :config
+  (smex-initialize)
+  :bind
+  ("M-x" . smex)
+  ("M-X" . execute-extended-command)
   )
 
 ;; smartparens
