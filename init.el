@@ -59,6 +59,7 @@
 (defun my-backward-kill-line() (interactive) (kill-line 0))
 (defun my-next-window() (interactive) (other-window 1))
 (defun my-prev-window() (interactive) (other-window -1))
+(defun my-reload-init-file() (interactive) (load-file user-init-file))
 (defun my-transpose-char() (interactive) (backward-char) (transpose-chars 1))
 (defun my-transpose-word() (interactive) (backward-word) (transpose-words 1))
 (use-package bind-key
@@ -75,6 +76,7 @@
   (bind-key* "C-S-<up>" 'shrink-window)
   (bind-key* "M-h" 'help-for-help)      ; from mark-paragraph
   (bind-key* "M-t" 'my-transpose-word)  ; from transpose-words
+  (bind-key* "M-R" 'my-reload-init-file)
   (bind-key* "M-`" 'menu-bar-open)      ; from tmm-menubar
   (bind-key* "C-\\" nil)                ; from toggle-input-method
   )
