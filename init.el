@@ -4,9 +4,9 @@
   (setq user-emacs-directory (file-name-directory load-file-name)))
 
 ;; Manage packages for each emacs version
-(let ((versioned-dir (locate-user-emacs-file emacs-version)))
-  (setq el-get-dir (expand-file-name "el-get" versioned-dir)
-        package-user-dir (expand-file-name "elpa" versioned-dir)))
+(defvar my-emacs-version-dir (locate-user-emacs-file emacs-version))
+(setq el-get-dir (expand-file-name "el-get" my-emacs-version-dir)
+      package-user-dir (expand-file-name "elpa" my-emacs-version-dir))
 
 ;; Install el-get
 (add-to-list 'load-path (expand-file-name "el-get" el-get-dir))
