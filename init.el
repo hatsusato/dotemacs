@@ -56,6 +56,7 @@
 (el-get-bundle elpa:undo-tree)
 
 ;; Global key bindings
+(defun my-backward-kill-line() (interactive) (kill-line 0))
 (defun my-next-window() (interactive) (other-window 1))
 (defun my-prev-window() (interactive) (other-window -1))
 (defun my-transpose-char() (interactive) (backward-char) (transpose-chars 1))
@@ -64,7 +65,7 @@
   :config
   (bind-key* "C-h" 'backward-delete-char-untabify) ; from help-command
   (bind-key* "C-t" 'my-transpose-char)             ; from transpose-chars
-  (bind-key* "C-u" 'backward-kill-sentence)        ; from universal-argument
+  (bind-key* "C-u" 'my-backward-kill-line)         ; from universal-argument
   (bind-key* "C-x n" 'my-next-window)
   (bind-key* "C-x p" 'my-prev-window)
   (bind-key* "C-x C-b" 'bs-show)        ; from list-buffers
