@@ -199,6 +199,8 @@
   (global-undo-tree-mode)
   )
 
+(use-package zenburn-theme)
+
 ;; Load separate custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
