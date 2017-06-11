@@ -128,6 +128,8 @@
   (setq ido-enable-flex-matching t)
   (ido-ubiquitous-mode 1)
   )
+
+;; ido vertical mode
 (use-package ido-vertical-mode
   :config
   (ido-vertical-mode 1)
@@ -199,6 +201,7 @@
   (global-undo-tree-mode)
   )
 
+;; zenburn theme
 (use-package zenburn-theme)
 
 ;; Load separate custom file
