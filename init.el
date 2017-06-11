@@ -35,7 +35,6 @@
 (el-get-bundle creichert/ido-vertical-mode.el)
 (el-get-bundle magit/magit)
 (el-get-bundle magnars/multiple-cursors.el)
-(el-get-bundle ProofGeneral/PG)
 (el-get-bundle Fanael/rainbow-delimiters)
 (el-get-bundle Fuco1/smartparens)
 (el-get-bundle nonsequitur/smex)
@@ -136,16 +135,27 @@
   )
 
 ;; proof general
-;; (async-shell-command (concat "make -C " (expand-file-name "PG" el-get-dir)))
-(use-package proof-site
-  :init
-  (load (expand-file-name "PG/generic/proof-site" el-get-dir))
-  :config
-  (setq coq-compile-before-require t)
-  (setq coq-compile-parallel-in-background t)
-  (setq proof-electric-terminator-enable t)
-  (setq proof-three-window-mode-policy 'hybrid)
-  )
+(let* ((pg-dir (expand-file-name "PG" my-emacs-version-dir))
+       (ps-file (expand-file-name "generic/proof-site" pg-dir))
+       (ps-byte-file (concat ps-file ".elc"))
+       (pg-url "https://github.com/ProofGeneral/PG")
+       (join (lambda (args) (mapconcat 'identity args " ")))
+       (clone-command (funcall join (list "git" "clone" pg-url pg-dir)))
+       (make-command (funcall join (list "make" "-C" pg-dir))))
+  (cond ((not (file-exists-p pg-dir))
+         (async-shell-command clone-command))
+        ((not (file-exists-p ps-byte-file))
+         (async-shell-command make-command))
+        (t
+         (use-package proof-site
+           :init
+           (load ps-file)
+           :config
+           (setq coq-compile-before-require t)
+           (setq coq-compile-parallel-in-background t)
+           (setq proof-electric-terminator-enable t)
+           (setq proof-three-window-mode-policy 'hybrid)
+           ))))
 
 ;; rainbow delimiters
 (use-package reinbow-delimiters
