@@ -56,10 +56,10 @@
 (el-get-bundle elpa:undo-tree)
 
 ;; Global key bindings
-(defun my-transpose-char() (interactive) (backward-char) (transpose-chars 1))
-(defun my-transpose-word() (interactive) (backward-word) (transpose-words 1))
 (defun my-next-window() (interactive) (other-window 1))
 (defun my-prev-window() (interactive) (other-window -1))
+(defun my-transpose-char() (interactive) (backward-char) (transpose-chars 1))
+(defun my-transpose-word() (interactive) (backward-word) (transpose-words 1))
 (use-package bind-key
   :config
   (bind-key* "C-h" 'backward-delete-char-untabify) ; from help-command
