@@ -128,7 +128,6 @@
   (setq ido-enable-flex-matching t)
   (ido-ubiquitous-mode 1)
   )
-
 (use-package ido-vertical-mode
   :config
   (ido-vertical-mode 1)
@@ -158,7 +157,7 @@
            ))))
 
 ;; rainbow delimiters
-(use-package reinbow-delimiters
+(use-package rainbow-delimiters
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
   )
