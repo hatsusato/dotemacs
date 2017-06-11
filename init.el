@@ -204,6 +204,11 @@
 ;; zenburn theme
 (use-package zenburn-theme)
 
+;; Load optional .emacs if exists
+(let ((dotemacs (expand-file-name ".emacs" user-emacs-directory)))
+  (when (file-exists-p dotemacs)
+    (load-file dotemacs)))
+
 ;; Load separate custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file)
