@@ -165,7 +165,7 @@
   :init
   (add-hook 'prog-mode-hook #'smartparens-mode)
   :config
-  (sp-pair "$" "$")
+  ;; (sp-pair "$" "$")
   )
 
 ;; smooth scroll
