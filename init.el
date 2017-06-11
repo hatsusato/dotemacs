@@ -174,11 +174,10 @@
   )
 
 ;; smartparens
-(use-package smartparens-config
-  :init
-  (add-hook 'prog-mode-hook #'smartparens-mode)
+(use-package smartparens
   :config
-  ;; (sp-pair "$" "$")
+  (use-package smartparens-config)
+  (smartparens-global-mode 1)
   )
 
 ;; smooth scroll
