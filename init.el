@@ -84,7 +84,7 @@
 (use-package ace-jump-mode
   :config
   (setq ace-jump-mode-move-keys
-        (append "jfhgkdls;a:urytieowpq@mvnb,c.x/z-^[]\\1234567890" nil))
+        (append "asdfghjkl;qwertyuiop" nil))
   (setq ace-jump-word-mode-use-query-char nil)
   :bind
   ("M-:" . ace-jump-char-mode)
