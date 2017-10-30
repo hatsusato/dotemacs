@@ -31,7 +31,7 @@
 (el-get-bundle flycheck/flycheck)
 (el-get-bundle magit/git-modes)
 (el-get-bundle tom-tan/hlinum-mode)
-(el-get-bundle DarwinAwardWinner/ido-ubiquitous)
+(el-get-bundle DarwinAwardWinner/ido-completing-read-plus)
 (el-get-bundle creichert/ido-vertical-mode.el)
 (el-get-bundle magit/magit)
 (el-get-bundle magnars/multiple-cursors.el)
@@ -119,8 +119,8 @@
   (add-hook 'linum-mode-hook 'hlinum-activate)
   )
 
-;; ido ubiquitous
-(use-package ido-ubiquitous
+;; ido-completing-read+
+(use-package ido-completing-read+
   :config
   (ido-mode 1)
   (ido-everywhere 1)
