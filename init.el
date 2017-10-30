@@ -51,7 +51,6 @@
 ;; Package list from elpa to be installed by el-get
 (el-get-bundle elpa:markdown-mode)
 (el-get-bundle elpa:smooth-scroll)
-(el-get-bundle elpa:undohist)
 (el-get-bundle elpa:undo-tree)
 
 ;; Global key bindings
@@ -184,14 +183,6 @@
 (use-package smooth-scroll
   :config
   (smooth-scroll-mode t)
-  )
-
-;; undohist
-(use-package undohist
-  :config
-  (setq undohist-ignored-files
-        '(".*/\\.git/.*"))
-  (undohist-initialize)
   )
 
 ;; undo tree
