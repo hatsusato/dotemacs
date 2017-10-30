@@ -138,19 +138,18 @@
 
 ;; proof general
 (let* ((pg-dir (expand-file-name "PG" my-emacs-version-dir))
-       (ps-file (expand-file-name "generic/proof-site" pg-dir))
-       (ps-byte-file (concat ps-file ".elc"))
        (clone-command
         (concat "git clone https://github.com/ProofGeneral/PG " pg-dir))
        (make-command (concat "make -C " pg-dir)))
   (cond ((not (file-exists-p pg-dir))
          (async-shell-command clone-command))
-        ((not (file-exists-p ps-byte-file))
+        ((not (file-exists-p
+               (expand-file-name "generic/proof-site.elc" pg-dir)))
          (async-shell-command make-command))
         (t
          (use-package proof-site
            :init
-           (load ps-file)
+           (load (expand-file-name "generic/proof-site" pg-dir))
            :config
            (setq coq-compile-before-require t)
            (setq coq-compile-parallel-in-background t)
