@@ -140,10 +140,9 @@
 (let* ((pg-dir (expand-file-name "PG" my-emacs-version-dir))
        (ps-file (expand-file-name "generic/proof-site" pg-dir))
        (ps-byte-file (concat ps-file ".elc"))
-       (pg-url "https://github.com/ProofGeneral/PG")
-       (join (lambda (args) (mapconcat 'identity args " ")))
-       (clone-command (funcall join (list "git" "clone" pg-url pg-dir)))
-       (make-command (funcall join (list "make" "-C" pg-dir))))
+       (clone-command
+        (concat "git clone https://github.com/ProofGeneral/PG " pg-dir))
+       (make-command (concat "make -C " pg-dir)))
   (cond ((not (file-exists-p pg-dir))
          (async-shell-command clone-command))
         ((not (file-exists-p ps-byte-file))
