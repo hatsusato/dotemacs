@@ -203,4 +203,5 @@
 
 ;; Load separate custom file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+(when (file-exists-p custom-file)
+  (load-file custom-file))
