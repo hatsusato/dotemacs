@@ -15,9 +15,14 @@
 ;; Disable start page
 (setq inhibit-startup-message t)
 ;; Costomizable initial scratch message
-(setq initial-scratch-message
-      (concat initial-scratch-message
-	      ";; /sudo::/path-to-file\n"))
+(let ((extra-scratch-message
+       (mapconcat 'identity
+                  '(";; /sudo::/path-to-file"
+                    ";; /ssh:user@host:/path-to-file"
+                    "")
+                  "\n")))
+  (setq initial-scratch-message
+        (concat initial-scratch-message extra-scratch-message)))
 ;; Highlight parens
 (show-paren-mode 1)
 ;; Show trailing space
