@@ -37,6 +37,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (undo-tree smooth-scroll)))
  '(custom-safe-themes
    (quote
     ("a58cc789698ca7c1059749f08baccd51702f53a7bf757509c3a1153769f0f60d" default)))
