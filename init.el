@@ -41,6 +41,7 @@
 (el-get-bundle magnars/s.el)
 (el-get-bundle Fuco1/smartparens)
 (el-get-bundle nonsequitur/smex)
+(el-get-bundle ocaml/tuareg)
 (el-get-bundle bbatsov/zenburn-emacs)
 
 ;; package
@@ -210,6 +211,9 @@
   :config
   (smooth-scroll-mode t)
   )
+
+;; tuareg
+(use-package tuareg)
 
 ;; undo tree
 (use-package undo-tree
