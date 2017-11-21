@@ -105,12 +105,20 @@
   (ac-config-default)
   )
 
+;; cl lib
+(use-package cl-lib)
+
 ;; cycle themes
 (defun my-print-current-theme()
   (interactive) (message "Themes = %S" custom-enabled-themes))
 (use-package cycle-themes
   :init
-  (setq cycle-themes-theme-list '(zenburn manoj-dark tsdh-dark default))
+  (let ((white-list '())
+        (black-list '())
+        (available-list (custom-available-themes)))
+    (setq cycle-themes-theme-list
+          (cl-union (cl-set-difference available-list black-list)
+                    white-list)))
   (setq custom-known-themes (append '(user changed) cycle-themes-theme-list))
   (add-hook 'cycle-themes-after-cycle-hook 'my-print-current-theme)
   :config
