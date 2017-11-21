@@ -46,7 +46,13 @@
 ;; package
 (use-package package
   :init
-  (setq gnutls-verify-error t)
+  (let* ((protocol (if (gnutls-available-p) "https://" "http://"))
+         (elpa (concat protocol "elpa.gnu.org/packages/"))
+         (melpa (concat protocol "melpa.org/packages/"))
+         (marmalade (concat protocol "marmalade-repo.org/packages/")))
+    (add-to-list 'package-archives (cons "elpa" elpa))
+    (add-to-list 'package-archives (cons "melpa" melpa))
+    (add-to-list 'package-archives (cons "marmalade" marmalade)))
   :config
   (package-initialize)
   )
