@@ -37,11 +37,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (undo-tree smooth-scroll)))
  '(custom-safe-themes
    (quote
-    ("a58cc789698ca7c1059749f08baccd51702f53a7bf757509c3a1153769f0f60d" default)))
- )
+    ("4feaff1b8ff9c5fd8aa54114f3ad5893f1e84ab4dbfea48911653b4f2f3e50fa" "a58cc789698ca7c1059749f08baccd51702f53a7bf757509c3a1153769f0f60d" default)))
+ '(package-selected-packages (quote (undo-tree smooth-scroll))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
