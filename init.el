@@ -35,6 +35,7 @@
 (el-get-bundle DarwinAwardWinner/ido-completing-read-plus)
 (el-get-bundle creichert/ido-vertical-mode.el)
 (el-get-bundle magit/magit)
+(el-get-bundle jrblevin/markdown-mode)
 (el-get-bundle magnars/multiple-cursors.el)
 (el-get-bundle Fanael/rainbow-delimiters)
 (el-get-bundle magnars/s.el)
@@ -51,7 +52,6 @@
   )
 
 ;; Package list from elpa to be installed by el-get
-(el-get-bundle elpa:markdown-mode)
 (el-get-bundle elpa:smooth-scroll)
 (el-get-bundle elpa:undo-tree)
 
@@ -134,6 +134,18 @@
 (use-package ido-vertical-mode
   :config
   (ido-vertical-mode 1)
+  )
+
+;; markdown mode
+(use-package markdown-mode
+  :commands
+  (markdown-mode gfm-mode)
+  :mode
+  (("README\\.md\\'" . gfm-mode)
+   ("\\.md\\'" . markdown-mode)
+   ("\\.markdown\\'" . markdown-mode))
+  :init
+  (setq markdown-command "markdown")
   )
 
 ;; proof general
